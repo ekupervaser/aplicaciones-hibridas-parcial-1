@@ -1,16 +1,17 @@
 {
-  "name": "actividad---mini-sistema",
+  "name": "parcial_1",
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "sistema.js",
+  "main": "app.js",
   "scripts": {
-    "server": "cls && node app.js"
+    "server": "cls && nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "mongodb": "5.4.0"
   },
   "devDependencies": {
     "nodemon": "2.0.22"

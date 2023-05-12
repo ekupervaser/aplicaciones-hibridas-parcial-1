@@ -1,14 +1,16 @@
 import express from 'express'
-import AlumnosRoute from './routes/alumnos.routes.js'
-/*  import path from 'path'; */
+import ProjectsRoute from './routes/projects.routes.js'
+import ProjectsRouteApi from './api/routes/projects.api.routes.js'
 
 const app = express()
 
 app.use(express.urlencoded({ extended: true}))
+app.use('/api', express.json())
 app.use('/', express.static('public'))
 
-app.use(AlumnosRoute)
+app.use(ProjectsRoute)
+app.use('/api', ProjectsRouteApi)
 
-app.listen(2023, function() {
+app.listen(2022, function() {
     console.log('Servidor levantado');
 })
