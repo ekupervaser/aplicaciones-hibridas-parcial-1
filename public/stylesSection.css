@@ -74,3 +74,12 @@ a:hover {
 .project-section li:last-child {
     margin-bottom: 10px;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0;
+  }

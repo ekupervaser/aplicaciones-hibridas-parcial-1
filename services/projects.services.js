@@ -38,9 +38,9 @@ async function deleteProject(id) {
     return db.collection("Projects").deleteOne({ _id: new ObjectId(id) })
 }
 
-async function getProjectsByClient(clientId) {
+async function getProjectsByClient(clienteId) {
     await client.connect()
-    return db.collection("Projects").find({ client_id: new ObjectId(clientId)}).toArray()
+    return db.collection("Projects").find({ client_id: new ObjectId(clienteId)}).toArray()
 }
 
 export {

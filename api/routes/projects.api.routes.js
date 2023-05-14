@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import * as projectController from '../controllers/projects.api.controllers.js'
-import * as clientController from '../controllers/clients.api.controllers.js'
+import * as clienteController from '../controllers/clientes.api.controllers.js'
 
 const router = Router()
 
@@ -16,10 +16,10 @@ router.patch('/projects/:id', projectController.editProjectById)
 
 router.put('/projects/:id', projectController.replaceProjectById)
 
-router.get('/clients', clientController.getClients)
+router.get('/clientes', clienteController.getClientes)
 
-router.get('/clients/:clientId/projects', projectController.getProjectsByClient)
+router.get('/clientes/:clienteId/projects', projectController.getProjectsByClient)
 
-router.post('/clients', clientController.createClient)
+router.post('/clientes', clienteController.createCliente)
 
 export default router

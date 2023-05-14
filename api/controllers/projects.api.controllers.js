@@ -12,21 +12,6 @@ function getProjects(req, res) {
         })
 }
 
-function getProjectBySection (req, res) {
-    const section = req.query.section
-    console.log(section)
-       service.getProjectBySection(section)
-           .then(function(project) {
-               if (project) {
-                res.status(200).json(project)
-               }
-               else {
-                res.status(404).json({error:{message: `No se encontró ningún proyecto en la sección ${section}.`}})
-               }
-               
-           })
-   }
-
 function getProjectById (req, res) {
     const id = req.params.id
 
@@ -98,8 +83,8 @@ function deleteProject (req, res) {
 }
 
 function getProjectsByClient (req, res) {
-    const clientId = req.params.clientId
-    service.getProjectsByClient(clientId)
+    const clienteId = req.params.clienteId
+    service.getProjectsByClient(clienteId)
     .then(function(project) {
         if (project) {
             res.status(200).json(project)
@@ -113,7 +98,6 @@ function getProjectsByClient (req, res) {
 export {
     getProjects,
     getProjectById,
-    getProjectBySection,
     createProject,
     replaceProjectById,
     editProjectById,

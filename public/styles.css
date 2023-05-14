@@ -40,3 +40,12 @@ a:hover {
     color: #fff;
     background-color: #333;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0;
+  }
