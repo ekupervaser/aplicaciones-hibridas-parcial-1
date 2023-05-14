@@ -11,7 +11,7 @@ function createProjectPage(projects, section) {
         html += `<li><img src="${project.img}" alt="Imagen del proyecto ${project.name}"></li>`
         html += `<li>Descripción: ${project.description}</li>`
         html += `<li>Tecnologías: ${project.technologies}</li>`
-        html += `<li>Link al repositorio: ${project.link}</li>`
+        html += `<li>Link al repositorio: <a href="${project.link}">${project.link}</a></li>`
         html += `</ul>`
     }
 

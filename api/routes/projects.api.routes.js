@@ -18,4 +18,8 @@ router.put('/projects/:id', projectController.replaceProjectById)
 
 router.get('/clients', clientController.getClients)
 
+router.get('/clients/:clientId/projects', projectController.getProjectsByClient)
+
+router.post('/clients', clientController.createClient)
+
 export default router

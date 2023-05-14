@@ -8,7 +8,7 @@ function getProjects(req, res) {
                 res.status(200).json(projects)
             }
             else {
-                res.status(404).json({error:{message: `No se encontraron proyectos`}})            }
+                res.status(404).json({error:{message: `No se encontraron proyectos`}})}
         })
 }
 
@@ -97,6 +97,19 @@ function deleteProject (req, res) {
     })
 }
 
+function getProjectsByClient (req, res) {
+    const clientId = req.params.clientId
+    service.getProjectsByClient(clientId)
+    .then(function(project) {
+        if (project) {
+            res.status(200).json(project)
+        } else {
+            res.status(404).json({error: {message: `No se encontró ningún projecto para el cliente con id ${clientId}.`}})
+        }
+    })
+
+}
+
 export {
     getProjects,
     getProjectById,
@@ -104,5 +117,6 @@ export {
     createProject,
     replaceProjectById,
     editProjectById,
-    deleteProject
+    deleteProject,
+    getProjectsByClient
 }

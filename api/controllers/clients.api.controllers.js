@@ -12,6 +12,20 @@ function getClients(req, res) {
         })
 }
 
+function createClient(req, res) {
+    const client = {
+        nombre: req.body.nombre,
+        foto: req.body.foto,
+        descripcion: req.body.descripcion,
+    }
+
+    service.createClient(client)
+        .then(function(client) {
+        res.status(201).json(client)
+    })
+}
+
 export {
-    getClients
+    getClients,
+    createClient
 }
