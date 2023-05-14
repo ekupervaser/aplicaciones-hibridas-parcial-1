@@ -1,8 +1,9 @@
 import * as service from '../../services/projects.services.js'
 
 function getProjects(req, res) {
+    const filter = req.query
 
-    service.getProjects(req.query)
+    service.getProjects(filter)
         .then(function(projects) {
             if (projects) {
                 res.status(200).json(projects)

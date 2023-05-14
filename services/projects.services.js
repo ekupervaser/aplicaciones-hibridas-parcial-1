@@ -3,9 +3,24 @@ import { MongoClient, ObjectId } from 'mongodb';
 const client = new MongoClient("mongodb://127.0.0.1:27017")
 const db = client.db("AH20231CP1")
 
-async function getProjects(filter={}) {
+async function getProjects(filter = {}) {
     await client.connect()
-    return db.collection("Projects").find(filter).toArray()
+
+    if (filter?.section && filter?.technologies) {
+        return db.collection("Projects").find({section: filter.section, technologies: {$in: [filter.technologies]}}).toArray()
+    }
+
+    else if (filter?.section) {
+        return db.collection("Projects").find({section: filter.section}).toArray()
+    }
+
+    else if (filter?.technologies) {
+        return db.collection("Projects").find({technologies: {$in: [filter.technologies]}}).toArray()
+    }
+
+    else {
+        return db.collection("Projects").find(filter).toArray()
+    }
 }
 
 async function getProjectById(id) {
